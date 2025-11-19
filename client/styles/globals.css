@@ -1,0 +1,364 @@
+/* client/styles/globals.css */
+
+/* --- 1. BASE RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Light background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- 2. NAVIGATION STYLES (NEW) --- */
+.nav-header {
+    background-color: #333;
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end; /* Push links to the right */
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #e53935; /* Primary red color on hover */
+}
+
+
+/* --- 3. GLOBAL CONTAINERS AND TEXT --- */
+.main-content {
+    min-height: 100vh;
+    padding: 0 2rem 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.title-h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.title-h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.title-h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.tip-text {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+.subtitle-text {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.loading-message, .error-message, .not-found {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.loading-message {
+    background-color: #e0f7fa;
+    color: #00838f;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+/* --- 4. BUTTON STYLES --- */
+.button-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: #e53935; /* Primary Red */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block; 
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.button-primary:hover {
+    background-color: #c62828;
+}
+
+.add-button {
+    width: auto;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+}
+
+.button-secondary {
+    padding: 0.75rem 1.5rem;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-primary:disabled, .button-secondary.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* --- 5. PANTRY INPUT & FORM STYLES --- */
+.input-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.input-form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.input-field {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.ingredient-list-display {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.ingredient-tag {
+    display: inline-block;
+    background-color: #e0f7fa; /* Light blue */
+    color: #00838f; /* Dark teal */
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.ingredient-tag button {
+    background: none;
+    border: none;
+    color: #00838f;
+    cursor: pointer;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.preference-group {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.preference-label {
+    margin-right: 1rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* --- 6. RECIPE CARD STYLES --- */
+.recipe-results-grid .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.recipe-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+.card-tags-container {
+    margin-top: 1rem;
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: #fff3e0; /* Light orange */
+    color: #ff6f00; /* Dark orange */
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+/* --- 7. RECIPE DETAIL PAGE STYLES --- */
+.recipe-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.detail-title {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-cost {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #e53935;
+}
+
+.detail-time {
+    font-size: 1rem;
+    color: #777;
+}
+
+.detail-section {
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ingredient-list li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ddd;
+}
+
+.ingredient-missing {
+    color: #e53935;
+    font-weight: 600;
+}
+
+.ingredient-pantry {
+    color: #388e3c;
+}
+
+.missing-tag {
+    margin-left: 10px;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+.instruction-list {
+    list-style: decimal inside;
+    padding-left: 1.5rem;
+}
+
+.instruction-list li {
+    margin-bottom: 10px;
+}
+
+/* --- 8. EMPTY AND ERROR STATES --- */
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 2rem;
+}
+
+.empty-text {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+.empty-link-text .link {
+    color: #007bff;
+    text-decoration: underline;
+}
